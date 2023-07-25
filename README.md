@@ -27,7 +27,7 @@ I attempted to implement dropdown menus and buttons using Bootstrap, but was uns
 
 ## How to Run
 
-[**Click this link**](https://ahmadk-bankingapp.s3.amazonaws.com/index.html#/) to view the app live on Amazon S3.
+[**Click this link**](https://full-stack-bad-bank-811f27fced78.herokuapp.com/#/) to view the app live on Heroku.
 
 ### Installing
 
@@ -62,33 +62,38 @@ I converted this exercise to a React app by using `create-react-app`. Informatio
 
 You can learn more in the **Create React App documentation** [here](https://facebook.github.io/create-react-app/docs/getting-started) or [here](https://github.com/facebook/create-react-app).
 
-### Available Scripts
+### API Endpoints
 
 <details>
-<summary>In the project directory, you can run:</summary>
+<summary>Below are the API endpoints outlined in this project. </summary>
 
-#### `npm start`
+### create user account
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+app.get'/account/create/:name/:email/:uid'
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### login user
 
-#### `npm test`
+app.get'/account/login/:email/:password'
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### find user account
 
-#### `npm run build`
+app.get'/account/find/:email'
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### find one user by email - alternative to find
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+app.get'/account/findOne/:email'
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### update - deposit/withdraw amount
+
+app.get'/account/update/:email/:amount'
+
+### all accounts
+
+app.get'/account/all'
+
+### delete user account by email
+
+app.delete'/account/delete/:email'
 
 </details>
 
